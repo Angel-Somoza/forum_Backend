@@ -1,0 +1,20 @@
+#Dependencies 
+node_modules/
+
+# Environment Variables
+.env
+.env.*
+
+# Allow enviroment template 
+!.env.example
+
+# Logs
+*.log    
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# os files
+.DS_Store
+Thumbs.db
