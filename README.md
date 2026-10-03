@@ -46,7 +46,6 @@ Nunca subir al repositorio:
 - secretos
 - `node_modules`
 
-
 La rama principal es `main`.
 
 Los cambios deben desarrollarse en ramas separadas y posteriormente integrarse mediante Pull Request.
