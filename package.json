@@ -11,18 +11,24 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node --test"
+    "test": "node --test",
+    "migrate": "node --env-file=.env ./node_modules/knex/bin/cli.js migrate:latest",
+    "migrate:make": "node --env-file=.env ./node_modules/knex/bin/cli.js migrate:make",
+    "migrate:rollback": "node --env-file=.env ./node_modules/knex/bin/cli.js migrate:rollback"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "knex": "^3.3.0",
+    "pg": "^8.23.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.12.0",
+    "globals": "^17.13.0",
     "prettier": "^3.9.9"
   }
 }
