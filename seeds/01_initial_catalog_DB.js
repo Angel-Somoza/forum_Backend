@@ -16,9 +16,7 @@ export async function seed(knex) {
       .onConflict('role_name')
       .ignore(); // Evita insertar duplicados si ya existen roles con el mismo nombre.
 
-    const developerRole = await trx('roles')
-      .where('role_name', 'Developer')
-      .first('role_id');
+    const developerRole = await trx('roles').where('role_name', 'Developer').first('role_id');
 
     if (!developerRole) {
       throw new Error('No se pudo encontrar el rol "Developer"');
@@ -63,21 +61,15 @@ export async function seed(knex) {
       .ignore(); // Evita insertar espacios con nombres duplicados.
 
     // Obtener los IDs reales de los usuarios y espacios.
-    const axel = await trx('users')
-      .where('email', 'axel.avila@example.com')
-      .first('user_id');
+    const axel = await trx('users').where('email', 'axel.avila@example.com').first('user_id');
 
-    const angel = await trx('users')
-      .where('email', 'angel.somoza@example.com')
-      .first('user_id');
+    const angel = await trx('users').where('email', 'angel.somoza@example.com').first('user_id');
 
     const universidad = await trx('forum_spaces')
       .where('space_name', 'Universidad')
       .first('space_id');
 
-    const colegio = await trx('forum_spaces')
-      .where('space_name', 'Colegio')
-      .first('space_id');
+    const colegio = await trx('forum_spaces').where('space_name', 'Colegio').first('space_id');
 
     // Relacionar los usuarios con sus espacios.
     await trx('user_spaces')
