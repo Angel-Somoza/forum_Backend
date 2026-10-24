@@ -6,7 +6,7 @@
 export async function up(knex) {
   //table roles
   await knex.schema.createTable('roles', (table) => {
-    table.increments('role_id').primary();
+    table.increments('role_id').primary(); //Estudiante, Catedratico, Universitario, Developver
     table.string('role_name').notNullable().unique();
   });
   //table users
